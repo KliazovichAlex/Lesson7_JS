@@ -19,3 +19,7 @@
 input {
   width: 100%;
 }
+
+.error_enter {
+  border: 2px solid red;
+}

@@ -11,15 +11,15 @@
       <h1 class="title">Форма для заполнения</h1>
       <p class="title">Введите данные</p>
 
-      <form name="info">
+      <form id="info">
         <div class="field">
           <label for="name">Имя</label>
-          <input
-            type="text"
-            placeholder="Enter your Name"
-            name="name"
-            required
-          />
+          <input class="" type="text" placeholder="Enter your Name" id="name" />
+        </div>
+
+        <div class="field">
+          <label for="age">Возрост</label>
+          <input type="text" placeholder="Enter your age" id="age" />
         </div>
 
         <div class="field">
@@ -27,14 +27,14 @@
           <input
             type="date"
             placeholder="Enter your birthday date"
-            name="birthday"
+            id="birthday"
             required
           />
         </div>
 
         <div class="field">
           <label for="education">Образование</label>
-          <select name="education" required>
+          <select id="education" required>
             <option value="high">Высшее</option>
             <option value="middle">Среднее</option>
             <option value="low">Низшее</option>
@@ -44,8 +44,8 @@
         <div class="sex">
           <label for="sex">Ваш пол</label>
           <hr />
-          <p><input name="sex" type="radio" value="male" checked /> Мужской</p>
-          <p><input name="sex" type="radio" value="female" /> Женский</p>
+          <p><input id="sex" type="radio" value="male" /> Мужской</p>
+          <p><input id="sex" type="radio" value="female" /> Женский</p>
         </div>
 
         <button value="send" onclick="complete();">Отправить</button>
