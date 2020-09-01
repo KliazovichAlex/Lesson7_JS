@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 30vw;
+  padding: 1rem;
+  margin: 0 auto;
+  border: 2px solid pink;
+  border-radius: 20px;
+}
+
+.title {
+  text-align: center;
+  color: purple;
+}
+
+input {
+  width: 100%;
+}

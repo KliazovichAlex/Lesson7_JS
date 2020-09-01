@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Форма для заполнения</h1>
+      <p class="title">Введите данные</p>
+
+      <form name="info">
+        <div class="field">
+          <label for="name">Имя</label>
+          <input
+            type="text"
+            placeholder="Enter your Name"
+            name="name"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="birthday">Дата рождения</label>
+          <input
+            type="date"
+            placeholder="Enter your birthday date"
+            name="birthday"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="education">Образование</label>
+          <select name="education" required>
+            <option value="high">Высшее</option>
+            <option value="middle">Среднее</option>
+            <option value="low">Низшее</option>
+          </select>
+        </div>
+
+        <div class="sex">
+          <label for="sex">Ваш пол</label>
+          <hr />
+          <p><input name="sex" type="radio" value="male" checked /> Мужской</p>
+          <p><input name="sex" type="radio" value="female" /> Женский</p>
+        </div>
+
+        <button value="send" onclick="complete();">Отправить</button>
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
