@@ -11,6 +11,7 @@ const adu = document.querySelector("#adu");
 const radio = document.getElementsByName("radio");
 const list = document.querySelector(".list");
 const radioForm = document.querySelector("#radioForm");
+const ul = document.querySelector("listStart");
 let arr = [];
 function checkSex(input) {
   if (input[0].checked) {
@@ -30,7 +31,12 @@ function validation(text) {
   } else {
     modalWrapper.style.display = "block";
     arr.push(text.value, age.value, date.value, adu.value, checkSex(radio));
-    list.innerHTML += `${arr}`;
+    arr.forEach(function (item) {
+      var li = document.createElement("li");
+      var text = document.createTextNode(item);
+      li.appendChild(text);
+      document.getElementById("listStart").appendChild(li);
+    });
   }
 }
 form.addEventListener("submit", function (event) {
