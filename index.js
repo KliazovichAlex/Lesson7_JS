@@ -1,47 +1,43 @@
-function complete() {
-  let form = getInfo("info");
-  let name = getInfo("name", true);
-  let age = getInfo("age");
-  let birthDate = getInfo("birthday");
-  let edu = getInfo("education");
-  let sex = getInfo("sex");
+const opemModalBtn = document.querySelector(".openModalBtn");
+const closeModalBtn = document.querySelector(".closeModalBtn");
+const modalWrapper = document.querySelector(".modalWrapper");
+const form = document.querySelector("#form");
+// modal window ^
 
-  alert(
-    name.value +
-      " " +
-      age.value +
-      " " +
-      birthDate.value +
-      " " +
-      checkEdu(edu) +
-      " " +
-      checkSex(sex)
-  );
-}
-
-function getInfo(param, isName) {
-  let data = document.getElementById(param);
-  if (data.value === "" && isName === true) {
-    data.classList.toggle("error_enter");
-  } else {
-    return data;
-  }
-}
-
-function checkEdu(input) {
-  if (input.value === "high") {
-    return "Высшее";
-  } else if (input.value === "middle") {
-    return "Среднее";
-  } else {
-    return "Низшее";
-  }
-}
-
-function checkSex(gender) {
-  if (gender.checked) {
+const text = document.querySelector("#text");
+const age = document.querySelector("#age");
+const date = document.querySelector("#date");
+const adu = document.querySelector("#adu");
+const radio = document.getElementsByName("radio");
+const list = document.querySelector(".list");
+const radioForm = document.querySelector("#radioForm");
+let arr = [];
+function checkSex(input) {
+  if (input[0].checked) {
     return "Мужской";
   } else {
     return "Женский";
   }
 }
+
+function validation(text) {
+  const smth = document.querySelector(".smth");
+  const error = document.getElementsByClassName("error");
+  const fieldError = document.querySelector(".field-error");
+  if (text.value === "") {
+    smth.classList.toggle("error");
+    text.classList.toggle("field-error");
+  } else {
+    modalWrapper.style.display = "block";
+    arr.push(text.value, age.value, date.value, adu.value, checkSex(radio));
+    list.innerHTML += `${arr}`;
+  }
+}
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  validation(text);
+});
+
+closeModalBtn.addEventListener("click", function () {
+  modalWrapper.style.display = "none";
+});

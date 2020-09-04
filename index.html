@@ -8,48 +8,52 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="title">Форма для заполнения</h1>
-      <p class="title">Введите данные</p>
+      <div class="header"><h1>Поле ввода</h1></div>
 
-      <form id="info">
-        <div class="field">
-          <label for="name">Имя</label>
-          <input class="" type="text" placeholder="Enter your Name" id="name" />
-        </div>
+      <div class="content">
+        <form id="form">
+          <div class="smth"></div>
 
-        <div class="field">
-          <label for="age">Возрост</label>
-          <input type="text" placeholder="Enter your age" id="age" />
-        </div>
-
-        <div class="field">
-          <label for="birthday">Дата рождения</label>
           <input
-            type="date"
-            placeholder="Enter your birthday date"
-            id="birthday"
-            required
+            type="text"
+            class="field"
+            id="text"
+            placeholder="Введите имя"
           />
-        </div>
+          <br />
 
-        <div class="field">
-          <label for="education">Образование</label>
-          <select id="education" required>
-            <option value="high">Высшее</option>
-            <option value="middle">Среднее</option>
-            <option value="low">Низшее</option>
+          <input
+            type="age"
+            class="field"
+            id="age"
+            placeholder="Введите возраст"
+          />
+          <br />
+          <label for="date" class="text">Введите дату рождения</label>
+          <input type="date" class="field text" id="date" />
+          <br />
+          <label for="select" class="text">Ваше образование</label>
+          <select name="education" class="field" id="adu">
+            <option value="Высшее">Высшее</option>
+            <option value="Среднее">Среднее</option>
+            <option value="Низкое">Низкое</option>
           </select>
-        </div>
+          <br />
 
-        <div class="sex">
-          <label for="sex">Ваш пол</label>
-          <hr />
-          <p><input id="sex" type="radio" value="male" /> Мужской</p>
-          <p><input id="sex" type="radio" value="female" /> Женский</p>
-        </div>
+          <label for="radio" class="text">Мужской</label>
+          <input type="radio" name="radio" value="Мужской" />
+          <label for="radio" class="text">Женский</label>
+          <input type="radio" name="radio" value="Женский" />
 
-        <button value="send" onclick="complete();">Отправить</button>
-      </form>
+          <button class="openModalBtn" type="submit ">Узнать результат</button>
+        </form>
+      </div>
+    </div>
+    <div class="modalWrapper">
+      <div class="modal">
+        <button class="closeModalBtn">X</button>
+        <p class="list"></p>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
