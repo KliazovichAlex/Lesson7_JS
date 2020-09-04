@@ -32,8 +32,8 @@ function validation(text) {
     modalWrapper.style.display = "block";
     arr.push(text.value, age.value, date.value, adu.value, checkSex(radio));
     arr.forEach(function (item) {
-      var li = document.createElement("li");
-      var text = document.createTextNode(item);
+      let li = document.createElement("li");
+      let text = document.createTextNode(item);
       li.appendChild(text);
       document.getElementById("listStart").appendChild(li);
     });
